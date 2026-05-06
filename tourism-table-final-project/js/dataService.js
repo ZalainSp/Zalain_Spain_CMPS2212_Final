@@ -430,7 +430,7 @@ export function createDataService(eventBus, dataUrl) {
         purpose: '',
         year: '',
       },
-      softColumn: null,
+      sortColumn: null,
       sortDirection: 'asc',
       page: 1,
       pageSize: PAGE_SIZE,

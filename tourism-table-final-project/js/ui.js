@@ -355,6 +355,11 @@ export function createUI(eventBus, dataService, rootEl) {
     //   - Find the closest <th> ancestor with data-sort-column.
     //   - Read the column name from its dataset.
     //   - Call dataService.setSort(column).
+    
+    const th = domEvent.target.closest('[data-sort-column]');
+    if (!th) return;
+    dataService.setSort(th.dataset.sortColumn);
+
 
   }
 
@@ -435,7 +440,7 @@ export function createUI(eventBus, dataService, rootEl) {
     subscriptions.push({ event: eventName, handler });
   }
 
-  function wireSubscriptions() {
+ function wireSubscriptions() {
     // TODO (10): wire all four event types.
     //
     //   - 'data:loading'    → showStatus('Loading tourism data…')
